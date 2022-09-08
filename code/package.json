@@ -1,0 +1,16 @@
+{
+  "name": "truculent-shape-induce-rw6k7",
+  "productName": "truculent-shape-induce-rw6k7",
+  "description": "My Electron application description",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "1.0.0",
+  "author": "huynh",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "19.0.6"
+  }
+}

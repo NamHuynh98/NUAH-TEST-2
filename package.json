@@ -1,0 +1,16 @@
+{
+  "name": "NUAH-TEST-2",
+  "productName": "NUAH-TEST-2",
+  "description": "",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "1.0.0",
+  "author": "namhuynh",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "19.0.6"
+  }
+}

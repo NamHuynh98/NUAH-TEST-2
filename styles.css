@@ -1,0 +1,40 @@
+* {
+    font-family: cursive;
+    font-weight: bold;
+}
+
+body {
+    display: flex;
+    height: 96vh;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+button {
+    margin-bottom: 15px;
+    font-size: 20px;
+    padding: 5px 35px;
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: 5px 5px 2px black;
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+    transform: translate(-2px, -2px);
+}
+
+button:hover {
+    box-shadow: 0 0 0;
+    transform: translate(0,0);
+}
