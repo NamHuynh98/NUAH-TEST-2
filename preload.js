@@ -1,12 +1,35 @@
-// All of the Node.js APIs are available in the preload process.
-// It has the same sandbox as a Chrome extension.
-window.addEventListener('DOMContentLoaded', () => {
-  const replaceText = (selector, text) => {
-    const element = document.getElementById(selector)
-    if (element) element.innerText = text
-  }
+const powershell = require("node-powershell");
 
-  for (const type of ['chrome', 'node', 'electron']) {
-    replaceText(`${type}-version`, process.versions[type])
-  }
-})
+window.addEventListener("DOMContentLoaded", () => {
+  const btnActivate = document.getElementById("btn-activate");
+  btnActivate.addEventListener("click", () => {
+    switch (process.platform) {
+      case "win32":
+        console.log("isWin");
+        const ps = new powershell({
+          executionPolicy: "Bypass",
+          noProfile: true,
+        });
+        ps.addCommand(
+          `iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))`
+        );
+        ps.invoke()
+          .then((output) => {
+            console.log(output);
+          })
+          .catch((err) => {
+            console.error(err);
+            ps.dispose();
+          });
+        break;
+      case "darwin":
+        console.log("isMac");
+        break;
+      case "linux":
+        console.log("isLinux");
+        break;
+      default:
+        break;
+    }
+  });
+});
