@@ -15,6 +15,16 @@
     <p>ACTIVATE VIRTUAL OS</p>
     <button id="btn-activate">ACTIVATE</button>
   </div>
+  <div class="modal" id="modal-status">
+    <div class="status">
+      <span>Installing </span>
+      <div class="loader"></div>
+    </div>
+    <div class="list-process">
+      <p><span id="status-vagrant">&#10005;</span> Vagrant</p>
+      <p><span id="status-vbox">&#10005;</span> VBox</p>
+    </div>
+  </div>
 
   <!-- You can also require other files to run in this process -->
   <script src="renderer.js"></script>

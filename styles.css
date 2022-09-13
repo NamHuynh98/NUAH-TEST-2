@@ -1,40 +1,95 @@
 * {
-    font-family: cursive;
-    font-weight: bold;
+  /* font-family: cursive; */
+  font-weight: bold;
 }
 
 body {
-    display: flex;
-    height: 96vh;
+  display: flex;
+  height: 96vh;
 }
 
 .container {
-    width: 90%;
-    margin: auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid black;
-    border-radius: 5px;
-    font-size: 20px;
-    box-sizing: border-box;
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 20px;
+  box-sizing: border-box;
 }
 
 button {
-    margin-bottom: 15px;
-    font-size: 20px;
-    padding: 5px 35px;
-    background-color: transparent;
-    border-radius: 5px;
-    box-shadow: 5px 5px 2px black;
-    transition: all .1s ease-in-out;
-    cursor: pointer;
-    transform: translate(-2px, -2px);
+  margin-bottom: 15px;
+  font-size: 20px;
+  padding: 5px 35px;
+  background-color: transparent;
+  border-radius: 5px;
+  box-shadow: 5px 5px 2px black;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+  transform: translate(-2px, -2px);
 }
 
 button:hover {
-    box-shadow: 0 0 0;
-    transform: translate(0,0);
+  box-shadow: 0 0 0;
+  transform: translate(0, 0);
+}
+
+.loader {
+  width: 22px;
+  aspect-ratio: 8/5;
+  --_g: no-repeat radial-gradient(#000 68%, #0000 71%);
+  -webkit-mask: var(--_g), var(--_g), var(--_g);
+  -webkit-mask-size: 30% 40%;
+  background: black;
+  animation: load 2s infinite;
+  margin-left: 10px;
+}
+
+@keyframes load {
+  0% {
+    -webkit-mask-position: 0% 0%, 50% 0%, 100% 0%;
+  }
+  16.67% {
+    -webkit-mask-position: 0% 100%, 50% 0%, 100% 0%;
+  }
+  33.33% {
+    -webkit-mask-position: 0% 100%, 50% 100%, 100% 0%;
+  }
+  50% {
+    -webkit-mask-position: 0% 100%, 50% 100%, 100% 100%;
+  }
+  66.67% {
+    -webkit-mask-position: 0% 0%, 50% 100%, 100% 100%;
+  }
+  83.33% {
+    -webkit-mask-position: 0% 0%, 50% 0%, 100% 100%;
+  }
+  100% {
+    -webkit-mask-position: 0% 0%, 50% 0%, 100% 0%;
+  }
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px 40px;
+  border: 1px solid;
+  border-radius: 5px;
+  display: none;
+}
+
+.status {
+  display: flex;
+}
+
+.list-process span {
+  margin-right: 5px;
 }
